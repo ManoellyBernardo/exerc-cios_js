@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Crie um código que receba 3 valores do comprimento de um triângulo e depois mostre um alert informando se o triângulo é equilátero, isóceles ou escaleno.
+        */
+
+        const ladoA = parseFloat(prompt("Qual é o comprimento do lado A do triângulo ? "))
+        const ladoB = parseFloat(prompt("Qual é o comprimento do lado B do triângulo ? "))
+        const ladoC = parseFloat(prompt("Qual é o comprimento do lado C do triângulo ? "))
+
+        if (ladoA == ladoB && ladoA == ladoC && ladoB == ladoC ) {
+            alert("Triângulo equilátero.")
+        } else if (ladoA == ladoB || ladoA ==ladoC || ladoB == ladoC) {
+            alert("Triângulo isóceles.")
+        } else if(ladoA != ladoB && ladoA != ladoB && ladoB != ladoC){
+            alert("Triângulo escaleno.")
+        }
+
+    </script>
+</body>
+</html>
