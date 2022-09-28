@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /**
+         * Uma Cia de pulverização utiliza avião para pulverizar lavouras. Os custos de
+pulverização dependem do tipo de praga e da área a ser contratada conforme a tabela:
+Tipo 1 – ervas daninhas R$ 50,00 por acre;
+Tipo 2 – gafanhotos R$ 100,00 por acre;
+Tipo 3 – broca R$ 150,00 por acre;
+Tipo 4 – todos acima R$ 250,00 por acre.
+Se a área a ser pulverizada for superior a 1000 acres, o fazendeiro tem um desconto de
+5%. Em adição, qualquer fazendeiro cujo custo for maior do que R$ 750,00 tem um
+desconto de 10% sobre o valor que ultrapassar os R$ 750,00. Caso ambos os descontos se
+aplicam o da área é calculado antes. Fazer um algoritmo que leia: o tipo de pulverização
+(1 a 4) e área a ser pulverizada; e imprima o valor a ser pago.
+        */
+
+        const tipoPraga = prompt(`Qual é o tipo de praga ?
+        digite 1 se for ervas daninhas;
+        digite 2 se for gafanhotos;
+        digite 3 se for broca;
+        digite 4 se for todos acima.`)
+        const acres = parseInt(prompt("Quantos acres ? "))
+        let custoPulv = 0
+
+        if (tipoPraga == 1) {
+            custoPulv = 50 * acres
+        } else if (tipoPraga == 2){
+            custoPulv = 100 * acres
+        } else if(tipoPraga == 3) {
+            custoPulv = 150 * acres
+        }else if (tipoPraga == 4){
+            custoPulv = 250 * acres
+        }
+
+        if (acres > 1000 && custoPulv > 750) {
+            custoPulv = custoPulv * .95
+            custoPulv = custoPulv * .90
+        } else if (acres > 1000) {
+            custoPulv = custoPulv * .95
+        }else if (custoPulv > 750) {
+            custoPulv = custoPulv * .90
+        }
+
+        alert("O valor a ser pago é: " + custoPulv + " reais.")
+
+    </script>
+</body>
+</html>
